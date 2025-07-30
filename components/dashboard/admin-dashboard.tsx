@@ -31,6 +31,7 @@ import { InvoiceManagement } from "@/components/invoice-management"
 import { ProjectTracker } from "@/components/project-tracker"
 import { AdminTimeMonitor } from "@/components/time-tracking/admin-time-monitor"
 import { HardwareIntegration } from "@/components/time-tracking/hardware-integration"
+import CustomerDisplayPage from "@/components/customer_display/customer"
 
 export function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("dashboard")
@@ -166,6 +167,13 @@ export function AdminDashboard() {
                 >
                   <Calendar className="w-4 h-4 mr-2" />
                   Projects
+                </TabsTrigger>
+                <TabsTrigger
+                  value="customer-display"
+                  className="w-full justify-start data-[state=active]:bg-blue-50 data-[state=active]:text-blue-600 dark:data-[state=active]:bg-blue-900"
+                >
+                  <Monitor className="w-4 h-4 mr-2" />
+                  Customer Display
                 </TabsTrigger>
               </TabsList>
             </Tabs>
@@ -326,6 +334,9 @@ export function AdminDashboard() {
 
             <TabsContent value="projects">
               <ProjectTracker />
+            </TabsContent>
+            <TabsContent value="customer-display">
+              <CustomerDisplayPage />
             </TabsContent>
           </Tabs>
         </main>

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Plus, Minus, ShoppingCart, CreditCard, Trash2 } from "lucide-react"
+import { Plus, Minus, ShoppingCart, CreditCard, Trash2, Monitor } from "lucide-react"
 
 interface CartItem {
   id: string
@@ -105,9 +105,19 @@ export function POSInterface() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Point of Sale</h2>
-        <p className="text-gray-600 dark:text-gray-400">Process new sales and manage transactions</p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Point of Sale</h2>
+          <p className="text-gray-600 dark:text-gray-400">Process new sales and manage transactions</p>
+        </div>
+        <Button 
+          variant="outline" 
+          onClick={() => window.open('/customer-display', '_blank')}
+          className="flex items-center gap-2"
+        >
+          <Monitor className="w-4 h-4" />
+          Open Customer Display
+        </Button>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
